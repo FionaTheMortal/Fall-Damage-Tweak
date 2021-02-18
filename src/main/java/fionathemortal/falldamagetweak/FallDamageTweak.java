@@ -139,7 +139,7 @@ public class FallDamageTweak
 
 			float distance = originalDistance;
 			
-			if (velocityDistance < originalDistance)
+			if (velocityDistance + 0.5f < originalDistance)
 			{
 				distance = velocityDistance;
 				
@@ -171,7 +171,7 @@ public class FallDamageTweak
 
 				float distance = originalDistance;
 				
-				if (velocityDistance < originalDistance)
+				if (velocityDistance + 0.5f < originalDistance)
 				{
 					distance = velocityDistance;
 					
