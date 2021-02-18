@@ -1,0 +1,23 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="Creative Commons Zero v1.0 Universal"
+[[mods]]
+modId="falldamagetweak"
+version="${version}"
+displayName="Fall Damage Tweak"
+authors="FionaTheMortal"
+description="    This mod changes the way fall damage is calculated. In vanilla the damage depends on distance fallen. With this mod it depends on the velocity, which is more intuitve."
+
+[[dependencies.falldamagetweak]]
+    modId="forge"
+    mandatory=true
+    versionRange="[36,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.falldamagetweak]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.5]"
+    ordering="NONE"
+    side="BOTH"
