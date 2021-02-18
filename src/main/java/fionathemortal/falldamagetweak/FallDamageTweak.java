@@ -161,7 +161,7 @@ public class FallDamageTweak
 	            }
 	            else
 	            {
-	            	fallDamageMap.remove(entity);
+	            	fallDamageMap.remove(entity.getEntityId());
 	            }
 	        }
 	        else
