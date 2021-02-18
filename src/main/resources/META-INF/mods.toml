@@ -1,12 +1,12 @@
 modLoader="javafml"
 loaderVersion="[36,)"
-license="Creative Commons Zero v1.0 Universal"
+license=" Public Domain"
 [[mods]]
 modId="falldamagetweak"
 version="${version}"
 displayName="Fall Damage Tweak"
 authors="FionaTheMortal"
-description="    This mod changes the way fall damage is calculated. In vanilla the damage depends on distance fallen. With this mod it depends on the velocity, which is more intuitve."
+description="    Fall Damage Tweak is a Forge mod that makes fall damage depend on the entity's speed."
 
 [[dependencies.falldamagetweak]]
     modId="forge"
