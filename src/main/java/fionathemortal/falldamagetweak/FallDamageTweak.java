@@ -77,36 +77,34 @@ public class FallDamageTweak
 	{
 		float result = 0.0f;
 		
-		if (velocity < 0.0f)
+		float vy_f32 = (float)velocity;
+		
+		if (velocity < 0.0)
 		{
-			float vy_f32 = (float)velocity;
+			float v_sqr  = vy_f32 * vy_f32;
+			float v_cube = v_sqr * v_sqr;
 			
-			if (velocity > -2.137f)
+			if (vy_f32 > -2.137f)
 			{
-				final float a = -0x1.3bc07721dcafcp-3f;
-				final float b =  0x1.9f4d3cbb8e4f1p+2f;
-				final float c =  0x1.aa4596ae0d395p-1f;
-				final float d = -0x1.33e7bd6145291p-7f;
+				final float a = -0x1.ad6b2963f7138p-4f + 0x1.1200b00000000p-4f;
+				final float b =  0x1.8a9c601c1aa83p+2f;
+				final float c =  0x1.310a0384cb755p+0f;
+				final float d = -0x1.1b5955fb8c6a6p-3f;
+				final float e =  0x1.daf267ef86b17p-7f;
 				
-				float v_sqr  = vy_f32 * vy_f32;
-				float v_cube = v_sqr * v_sqr;
-				
-				float r1 =  a + b * v_sqr;
-				float r2 = (c + d * v_sqr) * v_cube;
+				float r1 = a + (b + c * v_sqr) * v_sqr;
+				float r2 = (d + e * v_sqr) * v_cube * v_sqr;
 				
 				result = r1 + r2;
 			}
 			else
 			{
-				final float a =  0x1.fa43007c54cacp+5f;
+				final float a =  0x1.fa43007c54cacp+5f + 0x1.4cb2938a44e00p-2f;
 				final float b = -0x1.e1e800f4a15a9p+4f;
 				final float c =  0x1.154f8050a89aap+3f;
 				final float d = -0x1.88796591fd14fp-1f;
 				final float e =  0x1.e91b30952764bp-6f;
-				
-				float v_sqr  = vy_f32 * vy_f32;
-				float v_cube = v_sqr * v_sqr;
-				
+
 				float r1 = a + (b + c * v_sqr) * v_sqr;
 				float r2 = (d + e * v_sqr) * v_cube * v_sqr;
 				
@@ -139,7 +137,7 @@ public class FallDamageTweak
 
 			float distance = originalDistance;
 			
-			if (velocityDistance + 0.5f < originalDistance)
+			if (velocityDistance < originalDistance)
 			{
 				distance = velocityDistance;
 				
@@ -171,7 +169,7 @@ public class FallDamageTweak
 
 				float distance = originalDistance;
 				
-				if (velocityDistance + 0.5f < originalDistance)
+				if (velocityDistance < originalDistance)
 				{
 					distance = velocityDistance;
 					
